@@ -1,0 +1,120 @@
+{
+    "godot-rust-node": {
+        "prefix": "gr-node",
+        "body": [
+            "#[derive(GodotClass)]",
+            "#[class(base = ${1:Node})]",
+            "pub struct ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} {",
+            "   $0",
+            "",
+            "    #[base]",
+            "    base: Base<$1>,",
+            "}",
+            "",
+            "#[godot_api]",
+            "impl I$1 for ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} {",
+            "    fn init(base: Base<$1>) -> Self {",
+            "        Self {",
+            "            base,",
+            "        }",
+            "    }",
+            "}",
+        ],
+        "description": "Godot-Rust Node"
+    },
+    "godot-rust-node-init": {
+        "prefix": "gr-node-init",
+        "body": [
+            "#[derive(GodotClass)]",
+            "#[class(base = ${1:Node}, init)]",
+            "pub struct ${2:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} {",
+            "   $0",
+            "",
+            "    #[base]",
+            "    base: Base<$1>,",
+            "}",
+        ],
+    },
+
+    "godot-rust-node-impl-self": {
+        "prefix": "gr-node-impl-self",
+        "body": [
+            "#[godot_api]",
+            "impl ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} {",
+            "    $0",
+            "}",
+        ],
+        "description": "Godot-Rust Node implementation for self"
+    },
+    "godot-rust-node-impl": {
+        "prefix": "gr-node-impl",
+        "body": [
+            "#[godot_api]",
+            "impl I$1 for ${2:{TM_FILENAME_BASE/(.*)/${1:/pascalcase}/}} {",
+            "    $0",
+            "}",
+        ],
+        "description": "Godot-Rust Node implementation for base interface"
+    },
+
+    "godot-rust-func": {
+        "prefix": "gr-func",
+        "body": [
+            "#[func]",
+            "fn $1(&mut self) {",
+            "    $0",
+            "}",
+        ],
+        "description": "Godot-Rust function (exposed to Godot)"
+    },
+
+    "godot-rust-signal": {
+        "prefix": "gr-signal",
+        "body": [
+            "#[signal]",
+            "fn $1(&mut self) {",
+            "    $0",
+            "}",
+        ],
+        "description": "Godot-Rust signal"
+    },
+
+    //#region Function overrides
+    "godot-rust-ready": {
+        "prefix": "gr-ready",
+        "body": [
+            "fn ready(&mut self) {",
+            "    $0",
+            "}",
+        ],
+        "description": "Godot-Rust ready function"
+    },
+    "godot-rust-process": {
+        "prefix": "gr-process",
+        "body": [
+            "fn process(&mut self, delta: f64) {",
+            "    $0",
+            "}",
+        ],
+        "description": "Godot-Rust process function"
+    },
+    "godot-rust-input": {
+        "prefix": "gr-input",
+        "body": [
+            "fn input(&mut self, event: InputEvent) {",
+            "    $0",
+            "}",
+        ],
+        "description": "Godot-Rust input function"
+    },
+    "godot-rust-physics": {
+        "prefix": "gr-physics",
+        "body": [
+            "fn physics_process(&mut self, delta: f64) {",
+            "    $0",
+            "}",
+        ],
+        "description": "Godot-Rust physics process function"
+    },
+    //#endregion
+}
