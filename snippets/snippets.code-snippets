@@ -72,9 +72,7 @@
         "prefix": "gr-signal",
         "body": [
             "#[signal]",
-            "fn $1(&mut self) {",
-            "    $0",
-            "}",
+            "fn $1();",
         ],
         "description": "Godot-Rust signal"
     },
