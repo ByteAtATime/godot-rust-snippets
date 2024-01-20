@@ -3,7 +3,7 @@
   "displayName": "Godot-Rust Snippets",
   "description": "",
   "icon": "assets/icon.png",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "publisher": "byteatatime",
   "engines": {
     "vscode": "^1.85.0"
